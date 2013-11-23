@@ -62,9 +62,11 @@ void loop() {
   ControlPacket packet;
   Rx64Response rx64;
 
-  if (xbee.getResponse().isAvailable() && xbee.getResponse().getApiId() == RX_64_RESPONSE)
+  if (xbee.getResponse().isAvailable() &&
+      xbee.getResponse().getApiId() == RX_64_RESPONSE)
     {
-      safetyCounter = 0;	/* reset safety counter (we've got connectivity) */
+      safetyCounter = 0;	/* reset safety counter -- we've got
+				   connectivity. */
 
       xbee.getResponse().getRx64Response(rx64);
       memcpy(&packet, rx64.getData(), sizeof(ControlPacket));
