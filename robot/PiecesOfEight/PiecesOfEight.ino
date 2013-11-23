@@ -12,6 +12,7 @@
  */
 #include <XBee.h>
 #include <Sabertooth.h>
+#include <limits.h>
 #include "ControlPacket.h"
 
 /* Pins used for relay-based belt/shooter control. */
@@ -59,6 +60,7 @@ void loop() {
   xbee.readPacket();
 
   ControlPacket packet;
+  Rx64Response rx64;
 
   if (xbee.getResponse().isAvailable() && xbee.getResponse().getApiId() == RX_64_RESPONSE)
     {
@@ -100,10 +102,10 @@ run(const ControlPacket& p)
   mcBack.motor(2, p.motor.back_right);
   mcBack.motor(1, p.motor.back_left);
   
-  digitalWrite(INTAKEPOWER, intakePower);
-  digitalWrite(INTAKEDIR, intakeDirection);
-  digitalWrite(FEEDPOWER, feedPower);
+  digitalWrite(INTAKEPOWER, p.intake);
+  digitalWrite(INTAKEDIR, p.intake < 0 ? 0 : 1);
+  digitalWrite(FEEDPOWER, p.feed);
   digitalWrite(FEEDDIR, HIGH);
-  digitalWrite(50, feedPower);
-  digitalWrite(53, feedPower);
+  digitalWrite(50, p.feed);
+  digitalWrite(53, p.feed);
 }
