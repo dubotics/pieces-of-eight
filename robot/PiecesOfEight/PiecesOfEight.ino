@@ -55,7 +55,7 @@ void setup() {
   xbee.setSerial(Serial1);
 }
 
-// continuously reads packets, looking for RX16 or RX64
+/** Continuously reads packets, looking for RX64 response packets. */
 void loop() {
   xbee.readPacket();
 
@@ -77,7 +77,7 @@ void loop() {
 	safetyCounter++;
 
       digitalWrite(13, LOW);
-      //TODO: add error code handling 
+      //TODO: add error code handling
     }
 
   
