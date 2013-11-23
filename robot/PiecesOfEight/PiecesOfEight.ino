@@ -13,7 +13,7 @@
 #include <limits.h>		/* for UINT_MAX */
 #include <XBee.h>
 #include <Sabertooth.h>
-#include "../../include/ControlPacket.h"
+#include "ControlPacket.h"
 
 /* Pins used for relay-based belt/shooter control. */
 const int INTAKEPOWER = 23;
