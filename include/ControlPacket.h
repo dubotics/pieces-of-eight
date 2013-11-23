@@ -14,7 +14,7 @@ extern "C" {
  *
  * DO NOT DELETE the "packed" attribute.  It is magic.
  */
-struct ControlPacket __attribute__ (( packed ))
+typedef struct __attribute__ (( packed ))
 {
   struct {
     int8_t
@@ -30,7 +30,7 @@ struct ControlPacket __attribute__ (( packed ))
     shooter;			/**< Shooter wheels motor power. */
 
   uint8_t kill;			/**< Kill flag. */
-};
+} ControlPacket;
 
 
 #ifdef __cplusplus

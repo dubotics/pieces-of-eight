@@ -10,7 +10,6 @@
  * Relay pins: see constants below.
  *
  */
-#include <limits.h>		/* for UINT_MAX */
 #include <XBee.h>
 #include <Sabertooth.h>
 #include "ControlPacket.h"
@@ -66,7 +65,7 @@ void loop() {
       safetyCounter = 0;	/* reset safety counter (we've got connectivity) */
 
       xbee.getResponse().getRx64Response(rx64);
-      memcpy(&packet, rx64.getData(), sizeof(Packet));
+      memcpy(&packet, rx64.getData(), sizeof(ControlPacket));
 
       digitalWrite(13, HIGH);
     }
@@ -94,7 +93,7 @@ void loop() {
 /** Set the outputs to those specified in the given packet.
  */
 void
-run(const Packet& p)
+run(const ControlPacket& p)
 {
   mcFront.motor(2, p.motor.front_left);
   mcFront.motor(1, p.motor.front_right);
