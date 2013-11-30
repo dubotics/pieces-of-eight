@@ -1,2 +1,5 @@
-# Ignore UNIX-style backup files
+# ...UNIX-style backup files
 *~
+
+# ...compiled JVM files for the Java client
+java-client/bin/*.class

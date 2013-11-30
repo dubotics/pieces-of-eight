@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="Jinput/jinput.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="Pieces of Eight Robot Code/Jinput"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="Jinput/jinput-test.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="Pieces of Eight Robot Code/Jinput"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="XBee/xbee-api-0.9.jar"/>
+	<classpathentry kind="lib" path="RXTXcomm.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="Pieces of Eight Robot Code/XBee"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="log4j.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
